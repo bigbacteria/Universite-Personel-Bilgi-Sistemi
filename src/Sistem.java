@@ -6,13 +6,11 @@ public class Sistem {
 
       EventQueue.invokeLater( new Runnable()
       {
-
          @Override
          public void run() {
             AnaPencere p = new AnaPencere();
             p.setVisible( true );
          }
-
       } );
 
    }
