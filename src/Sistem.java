@@ -9,7 +9,7 @@ public class Sistem {
          @Override
          public void run() {
             AnaPencere p = new AnaPencere();
-             p.setVisible( true );
+            p.setVisible( true );
          }
       } );
 
