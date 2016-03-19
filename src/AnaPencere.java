@@ -10,6 +10,9 @@ public class AnaPencere extends JFrame {
    final static int WIDTH = 500;
    final static int HEIGHT = 400;
 
+	final Color lightCyan = new Color(224,255,255);
+	final Color paleTurquoise = new Color(175,238,238);
+
    public AnaPencere() {
       initUI();
    }
@@ -57,12 +60,17 @@ public class AnaPencere extends JFrame {
       }
 
    }
+
+
+
    int posX = 0, posY = 0;
    private void initUI() {
       
       initLnF();
       
       /* JFrame */
+		final JPanel jpnlCaption = new JPanel();
+
       this.setDefaultCloseOperation( EXIT_ON_CLOSE );
       this.setTitle( "Üniversite Personel Bilgi Sistemi" );
       this.setSize( WIDTH, HEIGHT );
@@ -72,10 +80,18 @@ public class AnaPencere extends JFrame {
 
       this.addMouseListener( new MouseAdapter()
       {
+			@Override
          public void mousePressed( MouseEvent e ) {
             posX = e.getX();
             posY = e.getY();
+				jpnlCaption.setBackground( paleTurquoise ); //obvious specific reason.
          }
+
+			@Override
+			public void mouseReleased( MouseEvent e ) {
+				jpnlCaption.setBackground( Color.white ); //obvious specific reason.
+			}
+
       } );
 
       this.addMouseMotionListener( new MouseAdapter()
@@ -86,67 +102,134 @@ public class AnaPencere extends JFrame {
       } );
       /* JFrame */
 
-      /* PNLcaption */
-      JPanel PNLcaption = new JPanel();
-      PNLcaption.setBackground( Color.white );
-      this.add( PNLcaption, BorderLayout.PAGE_START );
+
+
+      /* jpnlCaption - defined just above the JFrame for obvious specific reasons*/
+      jpnlCaption.setBackground( Color.white );
+      this.add( jpnlCaption, BorderLayout.PAGE_START );
+
+		//For color touch ups
+		jpnlCaption.addMouseListener( new MouseListener()
+		{
+			@Override
+			public void mouseClicked( MouseEvent e ) {
+			}
+
+			@Override
+			public void mouseEntered( MouseEvent e ) {
+				jpnlCaption.setBackground( lightCyan );
+			}
+
+			@Override
+			public void mouseExited( MouseEvent e ) {
+				jpnlCaption.setBackground( Color.white );
+			}
+
+			@Override
+			public void mousePressed( MouseEvent e ) {
+				jpnlCaption.setBackground( paleTurquoise );
+
+				//This code is to make the JFrame draggable through this panel
+				posX = e.getX();
+				posY = e.getY();
+			}
+
+			@Override
+			public void mouseReleased( MouseEvent e ) {
+			}
+
+		} );
+
+		//This code is also complementary to the above one about dragging.
+		jpnlCaption.addMouseMotionListener( new MouseAdapter()
+		{
+			public void mouseDragged( MouseEvent e ) {
+				setLocation( e.getXOnScreen()-posX, e.getYOnScreen()-posY );
+			}
+		} );
       
+		
       JLabel LBLtitle = new JLabel( "University of Konoha" );
-      PNLcaption.add( LBLtitle );
-      /* PNLcaption */
+      jpnlCaption.add( LBLtitle );
+      /* jpnlCaption */
 
-      /* PNLmenu */
-      JPanel PNLmenu = new JPanel();
-      PNLmenu.setLayout( new BoxLayout(PNLmenu,BoxLayout.Y_AXIS) );
-      PNLmenu.setBackground( new Color(250,128,114) );
-      PNLmenu.setPreferredSize( new Dimension(155,HEIGHT) );
-      PNLmenu.setOpaque( true );
-      this.add( PNLmenu, BorderLayout.LINE_START );
+
+
+      /* jpnlMenu */
+      JPanel jpnlMenu = new JPanel();
+      jpnlMenu.setLayout( new BoxLayout(jpnlMenu,BoxLayout.Y_AXIS) );
+      jpnlMenu.setBackground( new Color(250,128,114) );
+      jpnlMenu.setPreferredSize( new Dimension(155,HEIGHT) );
+      jpnlMenu.setOpaque( true );
+      this.add( jpnlMenu, BorderLayout.LINE_START );
       
-      
-      JButton BTNlist = new JButton( "List Personel" );
-      BTNlist.setBorder( BorderFactory.createLineBorder(Color.black) );
-      BTNlist.setBackground( new Color(75,0,130) ); // indigo
-      BTNlist.setForeground( new Color(173,216,230)  ); // light blue
-      //BTNlist.setFocusPainted( false );
-      BTNlist.setCursor( new Cursor(Cursor.HAND_CURSOR) );
-      BTNlist.setMaximumSize( new Dimension(155,25) );
-      PNLmenu.add( BTNlist );
 
-      JButton BTNbrowse = new JButton( "Browse Personel" );
-      BTNbrowse.setBorder( BorderFactory.createLineBorder(Color.black) );
-      BTNbrowse.setBackground( new Color(75,0,130) ); // indigo
-      BTNbrowse.setForeground( new Color(173,216,230)  ); // light blue
-      BTNbrowse.setCursor( new Cursor(Cursor.HAND_CURSOR) );
-      BTNbrowse.setMaximumSize( new Dimension(155,25) );
-      PNLmenu.add( BTNbrowse );
 
-      JButton BTNadd = new JButton( "Add Personel" );
-      BTNadd.setBorder( BorderFactory.createLineBorder(Color.black) );
-      BTNadd.setBackground( new Color(75,0,130) ); // indigo
-      BTNadd.setForeground( new Color(173,216,230)  ); // light blue
-      BTNadd.setCursor( new Cursor(Cursor.HAND_CURSOR) );
-      BTNadd.setMaximumSize( new Dimension(155,25) );
-      PNLmenu.add( BTNadd );
+      JButton jbList = new JButton( "List Personel" );
+      jbList.setBorder( BorderFactory.createLineBorder(Color.black) );
+      jbList.setBackground( new Color(75,0,130) ); // indigo
+      jbList.setForeground( new Color(173,216,230)  ); // light blue
+      //jbList.setFocusPainted( false );
+      jbList.setCursor( new Cursor(Cursor.HAND_CURSOR) );
+      jbList.setMaximumSize( new Dimension(155,25) );
+      jpnlMenu.add( jbList );
 
-      JButton BTNdel = new JButton( "Delete Personel" );
-      BTNdel.setBorder( BorderFactory.createLineBorder(Color.black) );
-      BTNdel.setBackground( new Color(75,0,130) ); // indigo
-      BTNdel.setForeground( new Color(173,216,230)  ); // light blue
-      BTNdel.setCursor( new Cursor(Cursor.HAND_CURSOR) );
-      BTNdel.setMaximumSize( new Dimension(155,25) );
-      PNLmenu.add( BTNdel );
-      /* PNLmenu */
 
-      /* PNLcontent */
-      JPanel PNLcontent = new JPanel();
-      PNLcontent.setPreferredSize( new Dimension(300,HEIGHT) );
-      PNLcontent.setBackground( new Color(255,140,90) );
-      this.add( PNLcontent );
-      /* PNLcontent */
+
+      JButton jbBrowse = new JButton( "Browse Personel" );
+      jbBrowse.setBorder( BorderFactory.createLineBorder(Color.black) );
+      jbBrowse.setBackground( new Color(75,0,130) ); // indigo
+      jbBrowse.setForeground( new Color(173,216,230)  ); // light blue
+      jbBrowse.setCursor( new Cursor(Cursor.HAND_CURSOR) );
+      jbBrowse.setMaximumSize( new Dimension(155,25) );
+      jpnlMenu.add( jbBrowse );
+
+
+
+      JButton jbAdd = new JButton( "Add Personel" );
+      jbAdd.setBorder( BorderFactory.createLineBorder(Color.black) );
+      jbAdd.setBackground( new Color(75,0,130) ); // indigo
+      jbAdd.setForeground( new Color(173,216,230)  ); // light blue
+      jbAdd.setCursor( new Cursor(Cursor.HAND_CURSOR) );
+      jbAdd.setMaximumSize( new Dimension(155,25) );
+      jpnlMenu.add( jbAdd );
+
+
+
+      JButton jbDel = new JButton( "Delete Personel" );
+      jbDel.setBorder( BorderFactory.createLineBorder(Color.black) );
+      jbDel.setBackground( new Color(75,0,130) ); // indigo
+      jbDel.setForeground( new Color(173,216,230)  ); // light blue
+      jbDel.setCursor( new Cursor(Cursor.HAND_CURSOR) );
+      jbDel.setMaximumSize( new Dimension(155,25) );
+      jpnlMenu.add( jbDel );
+      /* jpnlMenu */
+
+
+
+      /* jpnlContent */
+      JPanel jpnlContent = new JPanel();
+      jpnlContent.setPreferredSize( new Dimension(300,HEIGHT) );
+      jpnlContent.setBackground( new Color(255,140,90) );
+      this.add( jpnlContent );
+      /* jpnlContent */
+
+
+
+		//~~Listeners~~//
+		MouseListener mouseListener = new Mlistener( jbList, jbBrowse, jbAdd, jbDel );
+		//MouseListener captionListener = new Mlistener( jpnlCaption );
+		jbList.addMouseListener( mouseListener );
+		jbBrowse.addMouseListener( mouseListener );
+		jbAdd.addMouseListener( mouseListener );
+		jbDel.addMouseListener( mouseListener );
+		//jpnlCaption.addMouseListener( captionListener );
+		//~~Listeners~~//
+
+
 
       this.pack();
-      System.out.println( BTNbrowse.getSize().getHeight() );
+      System.out.println( jbBrowse.getSize().getHeight() );
 
    }
 
