@@ -10,8 +10,8 @@ public class AnaPencere extends JFrame {
    final static int WIDTH = 500;
    final static int HEIGHT = 400;
 
-	final Color lightCyan = new Color(224,255,255);
-	final Color paleTurquoise = new Color(175,238,238);
+   final Color lightCyan = new Color(224,255,255);
+   final Color paleTurquoise = new Color(175,238,238);
 
    public AnaPencere() {
       initUI();
@@ -69,7 +69,7 @@ public class AnaPencere extends JFrame {
       initLnF();
       
       /* JFrame */
-		final JPanel jpnlCaption = new JPanel();
+      final JPanel jpnlCaption = new JPanel();
 
       this.setDefaultCloseOperation( EXIT_ON_CLOSE );
       this.setTitle( "Üniversite Personel Bilgi Sistemi" );
@@ -80,17 +80,17 @@ public class AnaPencere extends JFrame {
 
       this.addMouseListener( new MouseAdapter()
       {
-			@Override
+         @Override
          public void mousePressed( MouseEvent e ) {
             posX = e.getX();
             posY = e.getY();
-				jpnlCaption.setBackground( paleTurquoise ); //obvious specific reason.
+            jpnlCaption.setBackground( paleTurquoise ); //obvious specific reason.
          }
 
-			@Override
-			public void mouseReleased( MouseEvent e ) {
-				jpnlCaption.setBackground( Color.white ); //obvious specific reason.
-			}
+         @Override
+         public void mouseReleased( MouseEvent e ) {
+            jpnlCaption.setBackground( Color.white ); //obvious specific reason.
+         }
 
       } );
 
@@ -108,47 +108,47 @@ public class AnaPencere extends JFrame {
       jpnlCaption.setBackground( Color.white );
       this.add( jpnlCaption, BorderLayout.PAGE_START );
 
-		//For color touch ups
-		jpnlCaption.addMouseListener( new MouseListener()
-		{
-			@Override
-			public void mouseClicked( MouseEvent e ) {
-			}
+      //For color touch ups
+      jpnlCaption.addMouseListener( new MouseListener()
+      {
+         @Override
+         public void mouseClicked( MouseEvent e ) {
+         }
 
-			@Override
-			public void mouseEntered( MouseEvent e ) {
-				jpnlCaption.setBackground( lightCyan );
-			}
+         @Override
+         public void mouseEntered( MouseEvent e ) {
+            jpnlCaption.setBackground( lightCyan );
+         }
 
-			@Override
-			public void mouseExited( MouseEvent e ) {
-				jpnlCaption.setBackground( Color.white );
-			}
+         @Override
+         public void mouseExited( MouseEvent e ) {
+            jpnlCaption.setBackground( Color.white );
+         }
 
-			@Override
-			public void mousePressed( MouseEvent e ) {
-				jpnlCaption.setBackground( paleTurquoise );
+         @Override
+         public void mousePressed( MouseEvent e ) {
+            jpnlCaption.setBackground( paleTurquoise );
 
-				//This code is to make the JFrame draggable through this panel
-				posX = e.getX();
-				posY = e.getY();
-			}
+            //This code is to make the JFrame draggable through this panel
+            posX = e.getX();
+            posY = e.getY();
+         }
 
-			@Override
-			public void mouseReleased( MouseEvent e ) {
-			}
+         @Override
+         public void mouseReleased( MouseEvent e ) {
+         }
 
-		} );
+      } );
 
-		//This code is also complementary to the above one about dragging.
-		jpnlCaption.addMouseMotionListener( new MouseAdapter()
-		{
-			public void mouseDragged( MouseEvent e ) {
-				setLocation( e.getXOnScreen()-posX, e.getYOnScreen()-posY );
-			}
-		} );
+      //This code is also complementary to the above one about dragging.
+      jpnlCaption.addMouseMotionListener( new MouseAdapter()
+      {
+         public void mouseDragged( MouseEvent e ) {
+            setLocation( e.getXOnScreen()-posX, e.getYOnScreen()-posY );
+         }
+      } );
       
-		
+      
       JLabel LBLtitle = new JLabel( "University of Konoha" );
       jpnlCaption.add( LBLtitle );
       /* jpnlCaption */
@@ -216,15 +216,15 @@ public class AnaPencere extends JFrame {
 
 
 
-		//~~Listeners~~//
-		MouseListener mouseListener = new Mlistener( jbList, jbBrowse, jbAdd, jbDel );
-		//MouseListener captionListener = new Mlistener( jpnlCaption );
-		jbList.addMouseListener( mouseListener );
-		jbBrowse.addMouseListener( mouseListener );
-		jbAdd.addMouseListener( mouseListener );
-		jbDel.addMouseListener( mouseListener );
-		//jpnlCaption.addMouseListener( captionListener );
-		//~~Listeners~~//
+      //~~Listeners~~//
+      MouseListener mouseListener = new Mlistener( jbList, jbBrowse, jbAdd, jbDel );
+      //MouseListener captionListener = new Mlistener( jpnlCaption );
+      jbList.addMouseListener( mouseListener );
+      jbBrowse.addMouseListener( mouseListener );
+      jbAdd.addMouseListener( mouseListener );
+      jbDel.addMouseListener( mouseListener );
+      //jpnlCaption.addMouseListener( captionListener );
+      //~~Listeners~~//
 
 
 
