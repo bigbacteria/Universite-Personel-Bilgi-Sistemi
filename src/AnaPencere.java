@@ -108,25 +108,25 @@ public class AnaPencere extends JFrame {
       jpnlCaption.setBackground( Color.white );
       this.add( jpnlCaption, BorderLayout.PAGE_START );
 
-		JPanel jpnlTools = new JPanel();
-		jpnlTools.setPreferredSize( new Dimension(20,20) );
-		jpnlTools.setOpaque( false );
-		jpnlCaption.add( jpnlTools, BorderLayout.LINE_START );
+      JPanel jpnlTools = new JPanel();
+      jpnlTools.setPreferredSize( new Dimension(20,20) );
+      jpnlTools.setOpaque( false );
+      jpnlCaption.add( jpnlTools, BorderLayout.LINE_START );
 
-		JPanel jpnlTitle = new JPanel();
-		jpnlTitle.setOpaque( false );
-		jpnlCaption.add( jpnlTitle, BorderLayout.CENTER );
-		
+      JPanel jpnlTitle = new JPanel();
+      jpnlTitle.setOpaque( false );
+      jpnlCaption.add( jpnlTitle, BorderLayout.CENTER );
+      
       JLabel LBLtitle = new JLabel( "University of Konoha" );
-		
-		ImageIcon imgClose = new ImageIcon( "res/close.png" );
+      
+      ImageIcon imgClose = new ImageIcon( "res/close.png" );
       final JButton jbClose = new JButton( imgClose );
-		jbClose.setOpaque( false );
-		jbClose.setFocusPainted( false );
-		jbClose.setBorderPainted( false );
-		jbClose.setContentAreaFilled( false );
-		jbClose.setBorder( BorderFactory.createEmptyBorder(0,0,0,0) );
-		jbClose.setVisible( false );
+      jbClose.setOpaque( false );
+      jbClose.setFocusPainted( false );
+      jbClose.setBorderPainted( false );
+      jbClose.setContentAreaFilled( false );
+      jbClose.setBorder( BorderFactory.createEmptyBorder(0,0,0,0) );
+      jbClose.setVisible( false );
 
       //For color touch-ups
       jpnlCaption.addMouseListener( new MouseListener()
@@ -138,14 +138,14 @@ public class AnaPencere extends JFrame {
          @Override
          public void mouseEntered( MouseEvent e ) {
             jpnlCaption.setBackground( lightCyan );
-				jbClose.setVisible( true );
+            jbClose.setVisible( true );
 
          }
 
          @Override
          public void mouseExited( MouseEvent e ) {
             jpnlCaption.setBackground( Color.white );
-				jbClose.setVisible( false );
+            jbClose.setVisible( false );
          }
 
          @Override
@@ -174,7 +174,7 @@ public class AnaPencere extends JFrame {
 
 
       jpnlTitle.add( LBLtitle );
-		jpnlTools.add( jbClose );
+      jpnlTools.add( jbClose );
       /* jpnlCaption */
 
 
@@ -246,7 +246,7 @@ public class AnaPencere extends JFrame {
       jbBrowse.addMouseListener( mouseListener );
       jbAdd.addMouseListener( mouseListener );
       jbDel.addMouseListener( mouseListener );
-		jbClose.addMouseListener( mouseListener );
+      jbClose.addMouseListener( mouseListener );
       //~~Listeners~~//
 
 

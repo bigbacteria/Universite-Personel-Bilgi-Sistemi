@@ -16,7 +16,7 @@ public class Mlistener implements MouseListener {
       this.jbBrowse = jbBrowse;
       this.jbAdd = jbAdd;
       this.jbDel = jbDel;
-		this.jbClose = jbClose;
+      this.jbClose = jbClose;
    }
 
 
@@ -35,10 +35,10 @@ public class Mlistener implements MouseListener {
          jbAdd.setBackground( BACKGROUND_MOUSE_ENTERED );   
       else if( e.getSource() == jbDel )
          jbDel.setBackground( BACKGROUND_MOUSE_ENTERED );   
-		else if( e.getSource() == jbClose ) {
-			jbClose.setIcon( new ImageIcon( "res/close-over.png" ) );
-			jbClose.setVisible( true );
-		}
+      else if( e.getSource() == jbClose ) {
+         jbClose.setIcon( new ImageIcon( "res/close-over.png" ) );
+         jbClose.setVisible( true );
+      }
    }
 
    @Override
@@ -52,8 +52,8 @@ public class Mlistener implements MouseListener {
          jbAdd.setBackground( BACKGROUND );  
       else if( e.getSource() == jbDel )
          jbDel.setBackground( BACKGROUND );  
-		else if( e.getSource() == jbClose )
-			jbClose.setIcon( new ImageIcon( "res/close.png" ) );
+      else if( e.getSource() == jbClose )
+         jbClose.setIcon( new ImageIcon( "res/close.png" ) );
    }
 
    @Override
