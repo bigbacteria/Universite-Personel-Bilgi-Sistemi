@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Mlistener implements MouseListener {
+public class Mlistener implements MouseListener, ActionListener {
    
    private final Color BACKGROUND = new Color(75,0,130); //indigo
    private final Color FOREGROUND = new Color(173,216,230); //light blue
@@ -80,6 +80,25 @@ public class Mlistener implements MouseListener {
          jbAdd.setForeground( FOREGROUND );  
       else if( e.getSource() == jbDel )
          jbDel.setForeground( FOREGROUND );  
+   }
+
+   @Override
+   public void actionPerformed( ActionEvent e ) {
+      
+      ListPersonel lp;
+
+      if( e.getSource() == jbList ) {
+         lp = new ListPersonel( new Color(144,255,255) );
+         lp.addTo( AnaPencere.jpnlContent );
+      }
+      else if( e.getSource() == jbBrowse )
+         System.exit( 0 );
+      else if( e.getSource() == jbAdd )
+         System.exit( 0 );
+      else if( e.getSource() == jbDel )
+         System.exit( 0 );
+      else if( e.getSource() == jbClose )
+         System.exit( 0 );
    }
 
 }

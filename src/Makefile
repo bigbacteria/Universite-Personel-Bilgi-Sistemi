@@ -6,8 +6,10 @@ JC = javac
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = \
+	Sistem.java \
 	AnaPencere.java \
-	Sistem.java
+	Mlistener.java \
+	ListPersonel.java \
 
 default: classes
 

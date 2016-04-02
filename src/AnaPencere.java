@@ -13,6 +13,8 @@ public class AnaPencere extends JFrame {
    final Color lightCyan = new Color(224,255,255);
    final Color paleTurquoise = new Color(175,238,238);
 
+   public static JPanel jpnlContent;
+
    public AnaPencere() {
       initUI();
    }
@@ -232,10 +234,11 @@ public class AnaPencere extends JFrame {
 
 
       /* jpnlContent */
-      JPanel jpnlContent = new JPanel();
+      jpnlContent = new JPanel();
       jpnlContent.setPreferredSize( new Dimension(WIDTH,HEIGHT) );
       jpnlContent.setBackground( new Color(255,140,90) );
       this.add( jpnlContent );
+
       /* jpnlContent */
 
 
@@ -247,6 +250,15 @@ public class AnaPencere extends JFrame {
       jbAdd.addMouseListener( mouseListener );
       jbDel.addMouseListener( mouseListener );
       jbClose.addMouseListener( mouseListener );
+
+
+      ActionListener actionListener = new Mlistener( jbList, jbBrowse, jbAdd, jbDel, jbClose );
+      jbList.addActionListener( actionListener );
+      jbBrowse.addActionListener( actionListener );
+      jbAdd.addActionListener( actionListener );
+      jbDel.addActionListener( actionListener );
+      jbClose.addActionListener( actionListener );
+
       //~~Listeners~~//
 
 
