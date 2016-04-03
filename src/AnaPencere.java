@@ -14,6 +14,7 @@ public class AnaPencere extends JFrame {
    final Color paleTurquoise = new Color(175,238,238);
 
    public static JPanel jpnlContent;
+	private static final JPanel jpnlCaption = new JPanel( new BorderLayout() );
 
    public AnaPencere() {
       initUI();
@@ -71,14 +72,13 @@ public class AnaPencere extends JFrame {
       initLnF();
       
       /* JFrame */
-      final JPanel jpnlCaption = new JPanel( new BorderLayout() );
-
       this.setDefaultCloseOperation( EXIT_ON_CLOSE );
       this.setTitle( "Üniversite Personel Bilgi Sistemi" );
       this.setSize( WIDTH, HEIGHT );
       this.setResizable( false );
       this.setUndecorated( true );
       this.setLayout( new BorderLayout() );
+		this.setLocationRelativeTo( null );
 
       this.addMouseListener( new MouseAdapter()
       {
@@ -86,12 +86,12 @@ public class AnaPencere extends JFrame {
          public void mousePressed( MouseEvent e ) {
             posX = e.getX();
             posY = e.getY();
-            jpnlCaption.setBackground( paleTurquoise ); //obvious specific reason.
+            jpnlCaption.setBackground( paleTurquoise ); 
          }
 
          @Override
          public void mouseReleased( MouseEvent e ) {
-            jpnlCaption.setBackground( Color.white ); //obvious specific reason.
+            jpnlCaption.setBackground( Color.white ); 
          }
 
       } );
@@ -106,7 +106,7 @@ public class AnaPencere extends JFrame {
 
 
 
-      /* jpnlCaption - defined just above the JFrame for obvious specific reasons*/
+      /* jpnlCaption - defined private static final in the global scope */
       jpnlCaption.setBackground( Color.white );
       this.add( jpnlCaption, BorderLayout.PAGE_START );
 
@@ -119,7 +119,7 @@ public class AnaPencere extends JFrame {
       jpnlTitle.setOpaque( false );
       jpnlCaption.add( jpnlTitle, BorderLayout.CENTER );
       
-      JLabel LBLtitle = new JLabel( "University of Konoha" );
+      JLabel jlblTitle = new JLabel( "University Personel Information" );
       
       ImageIcon imgClose = new ImageIcon( "res/close.png" );
       final JButton jbClose = new JButton( imgClose );
@@ -175,7 +175,7 @@ public class AnaPencere extends JFrame {
       
 
 
-      jpnlTitle.add( LBLtitle );
+      jpnlTitle.add( jlblTitle );
       jpnlTools.add( jbClose );
       /* jpnlCaption */
 
@@ -184,7 +184,7 @@ public class AnaPencere extends JFrame {
       /* jpnlMenu */
       JPanel jpnlMenu = new JPanel();
       jpnlMenu.setLayout( new BoxLayout(jpnlMenu,BoxLayout.Y_AXIS) );
-      jpnlMenu.setBackground( new Color(250,128,114) );
+      jpnlMenu.setBackground( new Color(107,0,130) );
       jpnlMenu.setPreferredSize( new Dimension(155,HEIGHT) );
       jpnlMenu.setOpaque( true );
       this.add( jpnlMenu, BorderLayout.LINE_START );
@@ -235,8 +235,8 @@ public class AnaPencere extends JFrame {
 
       /* jpnlContent */
       jpnlContent = new JPanel();
-      jpnlContent.setPreferredSize( new Dimension(WIDTH,HEIGHT) );
-      jpnlContent.setBackground( new Color(255,140,90) );
+      jpnlContent.setPreferredSize( new Dimension(WIDTH-(int)jpnlMenu.getSize().getWidth(),HEIGHT) );
+      jpnlContent.setBackground( new Color(0,120,130) );
       this.add( jpnlContent );
 
       /* jpnlContent */
@@ -267,5 +267,10 @@ public class AnaPencere extends JFrame {
       System.out.println( jbBrowse.getSize().getHeight() );
 
    }
+
+	/* getter method */
+	public static JPanel getCaptionPanel() {
+		return jpnlCaption;
+	}
 
 }

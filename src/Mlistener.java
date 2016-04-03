@@ -37,6 +37,7 @@ public class Mlistener implements MouseListener, ActionListener {
          jbDel.setBackground( BACKGROUND_MOUSE_ENTERED );   
       else if( e.getSource() == jbClose ) {
          jbClose.setIcon( new ImageIcon( "res/close-over.png" ) );
+			AnaPencere.getCaptionPanel().setBackground( new Color(224,255,255) ); //lightCyan
          jbClose.setVisible( true );
       }
    }
@@ -85,18 +86,14 @@ public class Mlistener implements MouseListener, ActionListener {
    @Override
    public void actionPerformed( ActionEvent e ) {
       
-      ListPersonel lp;
-
-      if( e.getSource() == jbList ) {
-         lp = new ListPersonel( new Color(144,255,255) );
-         lp.addTo( AnaPencere.jpnlContent );
-      }
+      if( e.getSource() == jbList )
+         Sistem.listPersonel.addTo( AnaPencere.jpnlContent );
       else if( e.getSource() == jbBrowse )
-         System.exit( 0 );
+         Sistem.browsePersonel.addTo( AnaPencere.jpnlContent );
       else if( e.getSource() == jbAdd )
-         System.exit( 0 );
+         Sistem.addPersonel.addTo( AnaPencere.jpnlContent );
       else if( e.getSource() == jbDel )
-         System.exit( 0 );
+         Sistem.deletePersonel.addTo( AnaPencere.jpnlContent );
       else if( e.getSource() == jbClose )
          System.exit( 0 );
    }
