@@ -37,7 +37,7 @@ public class Mlistener implements MouseListener, ActionListener {
          jbDel.setBackground( BACKGROUND_MOUSE_ENTERED );   
       else if( e.getSource() == jbClose ) {
          jbClose.setIcon( new ImageIcon( "res/close-over.png" ) );
-			AnaPencere.getCaptionPanel().setBackground( new Color(224,255,255) ); //lightCyan
+         AnaPencere.getCaptionPanel().setBackground( new Color(224,255,255) ); //lightCyan
          jbClose.setVisible( true );
       }
    }

@@ -14,7 +14,7 @@ public class AnaPencere extends JFrame {
    final Color paleTurquoise = new Color(175,238,238);
 
    public static JPanel jpnlContent;
-	private static final JPanel jpnlCaption = new JPanel( new BorderLayout() );
+   private static final JPanel jpnlCaption = new JPanel( new BorderLayout() );
 
    public AnaPencere() {
       initUI();
@@ -78,7 +78,7 @@ public class AnaPencere extends JFrame {
       this.setResizable( false );
       this.setUndecorated( true );
       this.setLayout( new BorderLayout() );
-		this.setLocationRelativeTo( null );
+      this.setLocationRelativeTo( null );
 
       this.addMouseListener( new MouseAdapter()
       {
@@ -268,9 +268,9 @@ public class AnaPencere extends JFrame {
 
    }
 
-	/* getter method */
-	public static JPanel getCaptionPanel() {
-		return jpnlCaption;
-	}
+   /* getter method */
+   public static JPanel getCaptionPanel() {
+      return jpnlCaption;
+   }
 
 }
