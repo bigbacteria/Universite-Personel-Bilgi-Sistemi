@@ -86,16 +86,26 @@ public class Mlistener implements MouseListener, ActionListener {
    @Override
    public void actionPerformed( ActionEvent e ) {
       
-      if( e.getSource() == jbList )
+      if( e.getSource() == jbList ) {
          Sistem.listPersonel.addTo( AnaPencere.jpnlContent );
-      else if( e.getSource() == jbBrowse )
+         Sistem.listPersonel.setImg( "res/list.png", AnaPencere.jlblImg );
+      }
+      else if( e.getSource() == jbBrowse ) {
          Sistem.browsePersonel.addTo( AnaPencere.jpnlContent );
-      else if( e.getSource() == jbAdd )
+         Sistem.browsePersonel.setImg( "res/browse.png", AnaPencere.jlblImg );
+      }
+      else if( e.getSource() == jbAdd ) {
          Sistem.addPersonel.addTo( AnaPencere.jpnlContent );
-      else if( e.getSource() == jbDel )
+         Sistem.addPersonel.setImg( "res/add.png", AnaPencere.jlblImg );
+      }
+      else if( e.getSource() == jbDel ) {
          Sistem.deletePersonel.addTo( AnaPencere.jpnlContent );
-      else if( e.getSource() == jbClose )
+         Sistem.deletePersonel.setImg( "res/delete.png", AnaPencere.jlblImg );
+      }
+      else if( e.getSource() == jbClose ) {
          System.exit( 0 );
+      }
+
    }
 
 }

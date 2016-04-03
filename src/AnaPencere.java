@@ -15,6 +15,7 @@ public class AnaPencere extends JFrame {
 
    public static JPanel jpnlContent;
    private static final JPanel jpnlCaption = new JPanel( new BorderLayout() );
+   public static JLabel jlblImg;
 
    public AnaPencere() {
       initUI();
@@ -73,7 +74,7 @@ public class AnaPencere extends JFrame {
       
       /* JFrame */
       this.setDefaultCloseOperation( EXIT_ON_CLOSE );
-      this.setTitle( "Üniversite Personel Bilgi Sistemi" );
+      this.setTitle( "University Personel Information" );
       this.setSize( WIDTH, HEIGHT );
       this.setResizable( false );
       this.setUndecorated( true );
@@ -108,6 +109,7 @@ public class AnaPencere extends JFrame {
 
       /* jpnlCaption - defined private static final in the global scope */
       jpnlCaption.setBackground( Color.white );
+      jpnlCaption.setBorder( BorderFactory.createLineBorder(new Color(0,120,130)) );
       this.add( jpnlCaption, BorderLayout.PAGE_START );
 
       JPanel jpnlTools = new JPanel();
@@ -229,6 +231,12 @@ public class AnaPencere extends JFrame {
       jbDel.setCursor( new Cursor(Cursor.HAND_CURSOR) );
       jbDel.setMaximumSize( new Dimension(155,25) );
       jpnlMenu.add( jbDel );
+
+
+
+      jlblImg = new JLabel();
+      jpnlMenu.add( jlblImg );
+      
       /* jpnlMenu */
 
 

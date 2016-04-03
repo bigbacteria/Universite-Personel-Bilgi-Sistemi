@@ -34,4 +34,9 @@ public class BrowsePersonel extends JPanel {
 
 
 
+   // Sets icon for a jLabel with given address
+   public void setImg( String address, JLabel jlbl ) {
+      jlbl.setIcon( new ImageIcon(address) );
+      jlbl.setHorizontalAlignment( JLabel.CENTER );
+   }
 }
