@@ -13,6 +13,8 @@ CLASSES = \
 	BrowsePersonel.java \
 	AddPersonel.java \
 	DeletePersonel.java \
+	Personnel.java \
+	AcademicStaff.java \
 
 default: classes
 

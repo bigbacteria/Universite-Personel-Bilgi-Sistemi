@@ -74,7 +74,7 @@ public class AnaPencere extends JFrame {
       
       /* JFrame */
       this.setDefaultCloseOperation( EXIT_ON_CLOSE );
-      this.setTitle( "University Personel Information" );
+      this.setTitle( "University Staff Information" );
       this.setSize( WIDTH, HEIGHT );
       this.setResizable( false );
       this.setUndecorated( true );
@@ -121,7 +121,7 @@ public class AnaPencere extends JFrame {
       jpnlTitle.setOpaque( false );
       jpnlCaption.add( jpnlTitle, BorderLayout.CENTER );
       
-      JLabel jlblTitle = new JLabel( "University Personel Information" );
+      JLabel jlblTitle = new JLabel( "University Staff Information" );
       
       ImageIcon imgClose = new ImageIcon( "res/close.png" );
       final JButton jbClose = new JButton( imgClose );
@@ -193,7 +193,7 @@ public class AnaPencere extends JFrame {
       
 
 
-      JButton jbList = new JButton( "List Personel" );
+      JButton jbList = new JButton( "List Staff" );
       jbList.setBorder( BorderFactory.createLineBorder(Color.black) );
       jbList.setBackground( new Color(75,0,130) ); // indigo
       jbList.setForeground( new Color(173,216,230)  ); // light blue
@@ -204,7 +204,7 @@ public class AnaPencere extends JFrame {
 
 
 
-      JButton jbBrowse = new JButton( "Browse Personel" );
+      JButton jbBrowse = new JButton( "Browse Personnel" );
       jbBrowse.setBorder( BorderFactory.createLineBorder(Color.black) );
       jbBrowse.setBackground( new Color(75,0,130) ); // indigo
       jbBrowse.setForeground( new Color(173,216,230)  ); // light blue
@@ -214,7 +214,7 @@ public class AnaPencere extends JFrame {
 
 
 
-      JButton jbAdd = new JButton( "Add Personel" );
+      JButton jbAdd = new JButton( "Add Personnel" );
       jbAdd.setBorder( BorderFactory.createLineBorder(Color.black) );
       jbAdd.setBackground( new Color(75,0,130) ); // indigo
       jbAdd.setForeground( new Color(173,216,230)  ); // light blue
@@ -224,7 +224,7 @@ public class AnaPencere extends JFrame {
 
 
 
-      JButton jbDel = new JButton( "Delete Personel" );
+      JButton jbDel = new JButton( "Delete Personnel" );
       jbDel.setBorder( BorderFactory.createLineBorder(Color.black) );
       jbDel.setBackground( new Color(75,0,130) ); // indigo
       jbDel.setForeground( new Color(173,216,230)  ); // light blue

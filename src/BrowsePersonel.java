@@ -5,18 +5,29 @@ import java.awt.*;
 public class BrowsePersonel extends JPanel {
    
    public JPanel jpnlMain;
+   private AcademicStaff academicStaff;
 
    public BrowsePersonel() {
       initPanel();
+      initStaff();
    }
 
    private void initPanel() {
       jpnlMain = new JPanel();
       jpnlMain.setOpaque( true );
 
-      JLabel jlblTitle = new JLabel( "Browse Pearsonel in a suspicious manner" );
+      JLabel jlblTitle = new JLabel( "Browse Personnel" );
       jpnlMain.add( jlblTitle );
       
+   }
+
+
+
+   private void initStaff() {
+      academicStaff = new AcademicStaff(); //今のconstructorは何でもやっていない。
+      academicStaff.setName( "Magnus" );
+      academicStaff.setSurname( "Blume" );
+      jpnlMain.add( academicStaff.getCard() );
    }
    
    public void addTo( JPanel jpnlContainer ) {

@@ -12,8 +12,6 @@ public class AddPersonel extends JPanel {
 
    private void initPanel() {
       jpnlMain = new JPanel();
-      //jpnlMain.setBackground();
-      //jpnlMain.setPreferredSize( new Dimension(300,300) );
       jpnlMain.setOpaque( true );
 
       JLabel jlblTitle = new JLabel( "Add Pearsonel when you get bored the old ones" );
