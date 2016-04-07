@@ -1,10 +1,9 @@
-/* List Personel Window */
+/* Browse Personnel Window */
 import javax.swing.*;
 import java.awt.*;
 
 public class BrowsePersonel extends JPanel {
    
-   public JPanel jpnlMain;
    private AcademicStaff academicStaff;
 
    public BrowsePersonel() {
@@ -13,11 +12,18 @@ public class BrowsePersonel extends JPanel {
    }
 
    private void initPanel() {
-      jpnlMain = new JPanel();
-      jpnlMain.setOpaque( true );
+      this.setLayout( new BorderLayout() );
+      this.setOpaque( true );
+      this.setBackground( new Color(0,120,130) );
+      this.setBorder( BorderFactory.createLineBorder(Color.black) );
+
+      
+      JPanel jpnlTitle = new JPanel();
+
 
       JLabel jlblTitle = new JLabel( "Browse Personnel" );
-      jpnlMain.add( jlblTitle );
+      jpnlTitle.add( jlblTitle );
+      this.add( jpnlTitle, BorderLayout.PAGE_START );
       
    }
 
@@ -27,7 +33,10 @@ public class BrowsePersonel extends JPanel {
       academicStaff = new AcademicStaff(); //今のconstructorは何でもやっていない。
       academicStaff.setName( "Magnus" );
       academicStaff.setSurname( "Blume" );
-      jpnlMain.add( academicStaff.getCard() );
+      academicStaff.setPhoneNumber( "xxx-xxx-xx-xx" );
+      academicStaff.setEmail( "magnus@blume.co" );
+      academicStaff.setImage( "data/c.png" );
+      this.add( academicStaff.getCard(), BorderLayout.LINE_START );
    }
    
    public void addTo( JPanel jpnlContainer ) {
@@ -36,7 +45,7 @@ public class BrowsePersonel extends JPanel {
       jpnlContainer.removeAll();
 
       //add object to the container
-      jpnlContainer.add( this.jpnlMain );
+      jpnlContainer.add( this );
       
       //update the container JPanel
       jpnlContainer.revalidate();

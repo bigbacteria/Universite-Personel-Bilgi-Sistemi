@@ -1,21 +1,18 @@
-/* List Personel Window */
+/* List Staff Window */
 import javax.swing.*;
 import java.awt.*;
 
 public class ListPersonel extends JPanel {
    
-   public JPanel jpnlMain;
-
    public ListPersonel() {
       initPanel();
    }
 
    private void initPanel() {
-      jpnlMain = new JPanel();
-      jpnlMain.setOpaque( true );
+      this.setOpaque( true );
 
       JLabel jlblTitle = new JLabel( "List Pearsonel in a delicious order" );
-      jpnlMain.add( jlblTitle );
+      this.add( jlblTitle );
       
    }
    
@@ -25,7 +22,7 @@ public class ListPersonel extends JPanel {
       jpnlContainer.removeAll();
 
       //add object(s) to the container.
-      jpnlContainer.add( this.jpnlMain );
+      jpnlContainer.add( this );
 
       //update the container JPanel
       jpnlContainer.revalidate();

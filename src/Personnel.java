@@ -1,4 +1,5 @@
 import java.awt.*;
+import javax.swing.*;
 
 interface Personnel {
 
@@ -14,6 +15,6 @@ interface Personnel {
 	String getEmail();
 	void setEmail( String email );
 
-	Image getImage();
-	void setImage( Image img );
+	ImageIcon getImage();
+	void setImage( String address );
 }

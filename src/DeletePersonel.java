@@ -1,27 +1,22 @@
-/* List Personel Window */
+/* Delete Personnel Window */
 import javax.swing.*;
 import java.awt.*;
 
 public class DeletePersonel extends JPanel {
    
-   public JPanel jpnlMain;
-
    public DeletePersonel() {
       initPanel();
    }
 
    private void initPanel() {
-      jpnlMain = new JPanel();
-      //jpnlMain.setBackground();
-      //jpnlMain.setPreferredSize( new Dimension(300,300) );
-      jpnlMain.setLayout( new BorderLayout() );
-      jpnlMain.setOpaque( true );
+      this.setLayout( new BorderLayout() );
+      this.setOpaque( true );
 
       JLabel jlblTitle = new JLabel( "Delete Pearsonel if he starts to play card games in his free" );
-      jpnlMain.add( jlblTitle );
+      this.add( jlblTitle );
 
       JButton jbDugme = new JButton( "Merabalar" );
-      jpnlMain.add( jbDugme, BorderLayout.SOUTH );
+      this.add( jbDugme, BorderLayout.SOUTH );
       
    }
    
@@ -31,7 +26,7 @@ public class DeletePersonel extends JPanel {
       jpnlContainer.removeAll();
 
       //add object(s) to the container.
-      jpnlContainer.add( this.jpnlMain );
+      jpnlContainer.add( this );
 
       //update the container JPanel
       jpnlContainer.revalidate();
