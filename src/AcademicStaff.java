@@ -8,6 +8,14 @@ public class AcademicStaff implements Personnel {
 
    private JLabel jlblImg = new JLabel( "No Image" );
 
+   public AcademicStaff() {
+      this.name = null;
+      this.surname = null;
+      this.phoneNumber = null;
+      this.email = null;
+      this.img = null;
+   }
+
    @Override
    public String getName() {
       return name;

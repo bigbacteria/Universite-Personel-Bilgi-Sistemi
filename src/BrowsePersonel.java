@@ -1,10 +1,11 @@
 /* Browse Personnel Window */
 import javax.swing.*;
 import java.awt.*;
+import java.sql.*;
+import java.util.*;
 
 public class BrowsePersonel extends JPanel {
    
-   private AcademicStaff academicStaff;
 
    public BrowsePersonel() {
       initPanel();
@@ -12,7 +13,7 @@ public class BrowsePersonel extends JPanel {
    }
 
    private void initPanel() {
-      this.setLayout( new BorderLayout() );
+      this.setLayout( new BoxLayout(this,BoxLayout.Y_AXIS) );
       this.setOpaque( true );
       this.setBackground( new Color(0,120,130) );
       this.setBorder( BorderFactory.createLineBorder(Color.black) );
@@ -23,20 +24,55 @@ public class BrowsePersonel extends JPanel {
 
       JLabel jlblTitle = new JLabel( "Browse Personnel" );
       jpnlTitle.add( jlblTitle );
-      this.add( jpnlTitle, BorderLayout.PAGE_START );
+      this.add( jpnlTitle );
       
    }
 
 
 
    private void initStaff() {
-      academicStaff = new AcademicStaff(); //今のconstructorは何でもやっていない。
-      academicStaff.setName( "Magnus" );
-      academicStaff.setSurname( "Blume" );
-      academicStaff.setPhoneNumber( "xxx-xxx-xx-xx" );
-      academicStaff.setEmail( "magnus@blume.co" );
-      academicStaff.setImage( "data/c.png" );
-      this.add( academicStaff.getCard(), BorderLayout.LINE_START );
+      
+      Connection c = null;
+      Statement stmt = null;
+      int count = 0;
+
+      try {
+
+         Class.forName( "org.sqlite.JDBC" );
+         c = DriverManager.getConnection( "jdbc:sqlite:personnel.db" );
+         c.setAutoCommit( false );
+         
+
+         stmt = c.createStatement();
+         ResultSet rs4count = stmt.executeQuery( "SELECT *  FROM academic;" );
+         // this loop is to count number of rows.
+         while( rs4count.next() ) {
+            count++;
+         }
+
+         AcademicStaff[] academicStaff = new AcademicStaff[count];
+
+         // this loop is to fetch data
+         ResultSet rs = stmt.executeQuery( "SELECT *  FROM academic;" );
+         for( int i = 0; i < count; i++ ) {
+            rs.next();
+            academicStaff[i] = new AcademicStaff();
+            academicStaff[i].setName( rs.getString("name") );
+            academicStaff[i].setSurname( rs.getString("surname") );
+            academicStaff[i].setPhoneNumber( rs.getString("phone") );
+            academicStaff[i].setEmail( rs.getString("email") );
+            academicStaff[i].setImage( rs.getString("image") );
+            this.add( academicStaff[i].getCard() );
+         }
+         rs.close();
+         stmt.close();
+         c.close();
+      }
+      catch( Exception e ) {
+         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+         System.exit( 0 );
+      }
+
    }
    
    public void addTo( JPanel jpnlContainer ) {
