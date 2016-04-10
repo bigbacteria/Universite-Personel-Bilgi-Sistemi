@@ -241,13 +241,21 @@ public class AnaPencere extends JFrame {
 
 
 
-      /* jpnlContent */
-      jpnlContent = new JPanel();
-      jpnlContent.setPreferredSize( new Dimension(WIDTH-(int)jpnlMenu.getSize().getWidth(),HEIGHT) );
-      jpnlContent.setBackground( new Color(0,120,130) );
-      this.add( jpnlContent );
+      /* jpnlContent - jscrContent */
+      Dimension contentPaneSize = new Dimension( WIDTH-(int)jpnlMenu.getSize().getWidth(),HEIGHT );
 
-      /* jpnlContent */
+      jpnlContent = new JPanel();
+      jpnlContent.setBackground( new Color(0,120,130) );
+
+      JScrollPane jscrContent = new JScrollPane( jpnlContent );
+      jscrContent.setPreferredSize( contentPaneSize );
+      jscrContent.setHorizontalScrollBarPolicy( JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED );
+      jscrContent.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED );
+      jscrContent.getVerticalScrollBar().setUnitIncrement(10);
+      jscrContent.setBounds( 50, 30, 300, 50 );
+      this.add( jscrContent );
+
+      /* jpnlContent - jscrContent */
 
 
 

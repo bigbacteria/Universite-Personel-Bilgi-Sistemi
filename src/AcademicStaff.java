@@ -79,9 +79,9 @@ public class AcademicStaff implements Personnel {
 
    public JPanel getCard() {
 
-      JPanel jpnlCard = new JPanel( new FlowLayout() );
+      JPanel jpnlCard = new JPanel();
       jpnlCard.setBackground( new Color(0,120,130) );
-      //jpnlCard.setBorder( BorderFactory.createLineBorder(Color.black) );
+      jpnlCard.setBorder( BorderFactory.createLineBorder(Color.black) );
 
       JPanel jpnlInfo = new JPanel();
       jpnlInfo.setLayout( new BoxLayout(jpnlInfo,BoxLayout.Y_AXIS) );

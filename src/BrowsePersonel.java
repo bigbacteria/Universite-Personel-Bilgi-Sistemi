@@ -16,11 +16,8 @@ public class BrowsePersonel extends JPanel {
       this.setLayout( new BoxLayout(this,BoxLayout.Y_AXIS) );
       this.setOpaque( true );
       this.setBackground( new Color(0,120,130) );
-      this.setBorder( BorderFactory.createLineBorder(Color.black) );
-
       
       JPanel jpnlTitle = new JPanel();
-
 
       JLabel jlblTitle = new JLabel( "Browse Personnel" );
       jpnlTitle.add( jlblTitle );
