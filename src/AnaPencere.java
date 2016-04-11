@@ -253,6 +253,7 @@ public class AnaPencere extends JFrame {
       jscrContent.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED );
       jscrContent.getVerticalScrollBar().setUnitIncrement(10);
       jscrContent.setBounds( 50, 30, 300, 50 );
+      jscrContent.getVerticalScrollBar().setUI( new NewScrollBarUI() );
       this.add( jscrContent );
 
       /* jpnlContent - jscrContent */

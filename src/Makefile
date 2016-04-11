@@ -15,6 +15,7 @@ CLASSES = \
 	DeletePersonel.java \
 	Personnel.java \
 	AcademicStaff.java \
+	NewScrollBarUI.java \
 
 default: classes
 
