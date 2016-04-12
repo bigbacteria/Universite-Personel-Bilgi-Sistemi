@@ -26,13 +26,13 @@ public class NewScrollBarUI extends BasicScrollBarUI {
 
    @Override // background of the scroll bar.
    protected void paintTrack( Graphics g, JComponent c, Rectangle trackBounds ) {
-      g.setColor( new Color(0,120,130) );
+      g.setColor( new Color(0,90,98) );
       g.fillRect( (int)trackBounds.getX(), (int)trackBounds.getY(), (int)trackBounds.getWidth(), (int)trackBounds.getHeight() );
    }
 
    @Override // thumb of the scroll bar.
    protected void paintThumb( Graphics g, JComponent c, Rectangle thumbBounds ) {
-      g.setColor( new Color(75,0,130) );
+      g.setColor( new Color(0,60,65) );
       g.fillRect( (int)thumbBounds.getX(), (int)thumbBounds.getY(), (int)thumbBounds.getWidth(), (int)thumbBounds.getHeight() );
    }
 
