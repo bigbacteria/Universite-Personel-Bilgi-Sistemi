@@ -18,8 +18,11 @@ public class BrowsePersonel extends JPanel {
       this.setBackground( new Color(0,120,130) );
       
       JPanel jpnlTitle = new JPanel();
+      jpnlTitle.setBackground( new Color(0,120,130) );
+      jpnlTitle.setBorder( BorderFactory.createMatteBorder(0,0,3,0, new Color(0,60,65)) );
 
       JLabel jlblTitle = new JLabel( "Browse Personnel" );
+      jlblTitle.setForeground( new Color(0,60,65) );
       jpnlTitle.add( jlblTitle );
       this.add( jpnlTitle );
       
