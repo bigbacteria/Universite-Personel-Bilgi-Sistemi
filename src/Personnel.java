@@ -9,6 +9,9 @@ interface Personnel {
 	String getSurname();
 	void setSurname( String surname );
 
+	String getDept();
+	void setDept( String dept );
+
 	String getPhoneNumber();
 	void setPhoneNumber( String phoneNumber );
 

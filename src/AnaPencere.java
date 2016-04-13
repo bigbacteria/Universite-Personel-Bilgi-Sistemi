@@ -10,8 +10,8 @@ public class AnaPencere extends JFrame {
    final static int WIDTH = 500;
    final static int HEIGHT = 400;
 
-   final Color lightCyan = new Color(224,255,255);
-   final Color paleTurquoise = new Color(175,238,238);
+   final static Color lightCyan = new Color(224,255,255);
+   final static Color paleTurquoise = new Color(175,238,238);
 
    public static JPanel jpnlContent;
    private static final JPanel jpnlCaption = new JPanel( new BorderLayout() );

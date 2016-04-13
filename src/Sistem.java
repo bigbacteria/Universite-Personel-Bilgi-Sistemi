@@ -28,7 +28,7 @@ public class Sistem {
 
    }
 
-   // Halis muhlis el yapımı boyutlandırma fonksiyonu.
+   // Handmade image shrink method.
    public static ImageIcon shrinkImage( ImageIcon img, int desiredWidth, int desiredHeight ) {
       
       int originalWidth = img.getIconWidth();

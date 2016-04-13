@@ -3,7 +3,7 @@ import javax.swing.*;
 
 public class AcademicStaff implements Personnel {
    
-   private String name, surname, phoneNumber, email, department;
+   private String name, surname, phoneNumber, email, dept;
    private ImageIcon img;
 
    private JLabel jlblImg = new JLabel( "No Image" );
@@ -32,7 +32,19 @@ public class AcademicStaff implements Personnel {
    }
 
    //
-   
+
+   @Override
+   public String getDept() {
+      return dept;
+   }
+
+   @Override
+   public void setDept( String dept ) {
+      this.dept = dept;
+   }
+
+   //
+
    @Override
    public String getPhoneNumber() {
       return phoneNumber;
@@ -56,7 +68,7 @@ public class AcademicStaff implements Personnel {
    }
 
    //
-   
+
    @Override
    public ImageIcon getImage() {
       return img;
@@ -90,8 +102,8 @@ public class AcademicStaff implements Personnel {
       jlblName.setForeground( Color.white );
       JLabel jlblSurname = new JLabel( "Surname: " + this.surname );
       jlblSurname.setForeground( Color.white );
-      JLabel jlblDepartment = new JLabel( "Department: " + this.department );
-      jlblDepartment.setForeground( Color.white );
+      JLabel jlblDept = new JLabel( "Department: " + this.dept );
+      jlblDept.setForeground( Color.white );
       JLabel jlblPhoneNumber = new JLabel( "Phone Number: " + this.phoneNumber );
       jlblPhoneNumber.setForeground( Color.white );
       JLabel jlblEmail = new JLabel( "e-mail address: " + this.email );
@@ -100,7 +112,7 @@ public class AcademicStaff implements Personnel {
 
       jpnlInfo.add( jlblName );
       jpnlInfo.add( jlblSurname );
-      jpnlInfo.add( jlblDepartment );
+      jpnlInfo.add( jlblDept );
       jpnlInfo.add( jlblPhoneNumber );
       jpnlInfo.add( jlblEmail );
       jpnlImg.add( jlblImg );

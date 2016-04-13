@@ -59,6 +59,7 @@ public class BrowsePersonel extends JPanel {
             academicStaff[i] = new AcademicStaff();
             academicStaff[i].setName( rs.getString("name") );
             academicStaff[i].setSurname( rs.getString("surname") );
+            academicStaff[i].setDept( rs.getString("department") );
             academicStaff[i].setPhoneNumber( rs.getString("phone") );
             academicStaff[i].setEmail( rs.getString("email") );
             academicStaff[i].setImage( rs.getString("image") );
